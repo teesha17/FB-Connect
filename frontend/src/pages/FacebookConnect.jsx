@@ -145,7 +145,7 @@ const FacebookConnect = () => {
         )}
       </Paper>
 
-      {/* Snackbar */}
+      {/* Snackbar
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={4000}
@@ -155,7 +155,7 @@ const FacebookConnect = () => {
         <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} variant="filled" sx={{ width: '100%' }}>
           {snackbarMessage}
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
     </Container>
   );
 };
