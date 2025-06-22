@@ -24,7 +24,7 @@ const FacebookConnect = () => {
   // Snackbar state
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
-  const [snackbarSeverity, setSnackbarSeverity] = useState('info'); // 'success' | 'error' | 'warning' | 'info'
+  const [snackbarSeverity, setSnackbarSeverity] = useState('info');
 
   const showSnackbar = (message, severity = 'info') => {
     setSnackbarMessage(message);
@@ -155,7 +155,7 @@ const FacebookConnect = () => {
         <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} variant="filled" sx={{ width: '100%' }}>
           {snackbarMessage}
         </Alert>
-      </Snackbar> */}
+      </Snackbar> */} 
     </Container>
   );
 };
