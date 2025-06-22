@@ -91,7 +91,7 @@ const FacebookConnect = () => {
         { headers: { token } }
       );
 
-      showSnackbar('Facebook Page connected!', 'success');//
+      showSnackbar('Facebook Page connected!', 'success');
       navigate('/dashboard');
     } catch (err) {
       console.error('Connection failed:', err.response?.data || err.message);
