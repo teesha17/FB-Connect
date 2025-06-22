@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Container,
   TextField,
@@ -32,7 +32,7 @@ const Login = () => {
     <Container maxWidth="sm">
       <Paper elevation={3} sx={{ padding: 4, marginTop: 8 }}>
         <Typography variant="h5" component="h1" gutterBottom align="center">
-          Login
+          Login to your account
         </Typography>
 
         {error && (
@@ -71,6 +71,7 @@ const Login = () => {
           >
             Login
           </Button>
+          <Link to='/register'>do not have an account? Register</Link>
         </Box>
       </Paper>
     </Container>

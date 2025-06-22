@@ -10,6 +10,7 @@ export const RegisterUser = async (req, res) => {
     }
 
     const { name, email, password } = req.body;
+    console.log(req.body)
 
     if (!name || !email || !password) {
       return res.status(400).json({ status: false, message: 'All fields are required' });
@@ -27,6 +28,7 @@ export const RegisterUser = async (req, res) => {
       email,
       password: hashedPassword,
     });
+    console.log(newUser)
 
     const token = jwt.sign({ userId: newUser._id }, JWT_SECRET, { expiresIn: '1d' });
 

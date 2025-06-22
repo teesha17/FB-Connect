@@ -23,15 +23,19 @@ export const ReceiveMessage = async (req, res) => {
 
           // Get sender name from Graph API
           let senderName = 'Unknown';
+          let profilePic = '';
+          let first_name = '', last_name = '';
+
           try {
             const graphRes = await axios.get(`https://graph.facebook.com/${senderId}`, {
               params: {
-                fields: 'first_name,last_name',
+                fields: 'first_name,last_name,profile_pic',
                 access_token: user.fbPageAccessToken
               }
             });
-            const { first_name, last_name } = graphRes.data;
+            ({ first_name, last_name, profile_pic: profilePic } = graphRes.data);
             senderName = `${first_name} ${last_name}`;
+            console.log(graphRes.data)
           } catch (err) {
             console.warn('Failed to fetch sender name:', err.message);
           }
@@ -46,6 +50,7 @@ export const ReceiveMessage = async (req, res) => {
             convo = await Conversation.create({
               participant: senderId,
               participantName: senderName,
+              profilePic,
               createdAt: new Date()
             });
           }
