@@ -1,4 +1,4 @@
-import { LoginUser } from "./Login.controller.js";
+import { Login } from "./Login.controller.js";
 import { RegisterUser } from "./Register.Controller.js";
 
-export {LoginUser, RegisterUser};
+export {Login, RegisterUser};

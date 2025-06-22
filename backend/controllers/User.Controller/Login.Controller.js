@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { User } from '../../models/index.js';
 
 
-export const LoginUser = async (req, res) => {
+export const Login = async (req, res) => {
   const JWT_SECRET = process.env.JWT_SECRET;
   try {
     const { email, password } = req.body;
